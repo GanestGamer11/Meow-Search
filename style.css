@@ -1,0 +1,148 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#principal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+    height: 500px;
+}
+
+#principal-enter{
+    height: 500px;
+}
+
+#footer{
+    height: 50px;
+    border-radius: 0%;
+    width: 100%;
+    background-color: gray;
+    color: white;
+}
+
+#logo{
+    margin-top: 40px;
+    width: 40%;
+    transform: translate(0px, 4px);
+}
+
+#searchCamp{
+    border: 1px solid black;
+    height: 60px;
+    background-color: gray;
+    box-shadow: 0px 0px 10px rgb(129, 129, 129);
+}
+
+#interSearchCamp{
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 58px;
+    background-color: white;
+}
+
+#pesquisa{
+    border: none;
+    height: 50px;
+    width: 86.5%;
+    outline: none;
+    font-size: 20px;
+    color: #a16c6c;
+}
+
+#icon-search{
+    cursor: pointer;
+    width: 4%;
+    margin: 8px;
+    margin-left: 15px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+
+#icon-microfone{
+    cursor: pointer;
+    width: 2.5%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+}
+
+/* umas midiazinha ai */
+
+@media (max-width: 1200px){
+    #pesquisa{
+        width: 85%;
+    }
+}
+
+@media (max-width: 1000px){
+    #pesquisa{
+        width: 83%;
+    }
+}
+
+/* pagina de resultado */
+
+#top-nav{
+  width: 90%;
+  margin-top: 20px;
+  height: 80px;
+}
+
+/* dark mode button */
+
+#darkButton{
+  cursor: pointer;
+}
+
+:root{
+    --bs-dark: #212529;
+  }
+  
+  .theme-container {
+    position: absolute;
+    right: 0%;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .theme-container:hover {
+    opacity: 0.8;
+  }
+  
+  .shadow-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    box-shadow: 17px 17px 23px #1a1d20,
+      -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
+      inset -5px -5px 4px #24282c;
+  }
+  
+  .shadow-light {
+    box-shadow: 7px 7px 15px -10px #bbcfda, -4px -4px 13px #ffffff,
+      inset 7px 7px 3px rgba(209, 217, 230, 0.35),
+      inset -11px -11px 3px rgba(255, 255, 255, 0.3)
+  }
+  
+  @keyframes change {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(1.4);
+    }
+  }
+  
+  .change {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+  }

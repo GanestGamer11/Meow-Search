@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>MeowSearch</title>
+    <script>
+
+        window.onload = enableDark();
+
+        function enableDark(){
+            if (localStorage.getItem("escuro") == null) {
+                localStorage.setItem("escuro", false);
+                return;
+            }else{
+                localStorage.setItem("escuro", false);
+            }
+        }
+
+        function meow(){
+            var audio = new Audio("sounds/meow.mp3");
+            audio.play();
+        }
+
+        document.addEventListener('keypress', function(e){
+            if(e.which == 13){
+                redirect();
+            }
+        });
+        
+        function redirect(){
+            let text = document.getElementById("pesquisa").value;
+            if(text != ''){
+                localStorage.setItem("pesquisa", text);
+                window.location.href = "result.html";
+            }
+        }
+        function escuro() {
+            let escuro = localStorage.getItem("escuro");
+            var element = document.body;
+            var footer = document.getElementById("footer");
+            var img = document.getElementById("logo");
+            var searchCamp = document.getElementById("searchCamp");
+            
+            if(escuro == "true"){
+                localStorage.setItem("escuro", false);
+                element.classList.toggle("dark-body");
+                footer.style.background = "gray";
+                searchCamp.style.background = "gray";
+                img.src = "icons/logo-black.png";
+            }
+            
+            if(escuro == "false"){
+                localStorage.setItem("escuro", true);
+                element.classList.toggle("dark-body");
+                footer.style.background = "#FA8787";
+                searchCamp.style.background = "#FA8787";
+                img.src = "icons/logo.png";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="theme-container shadow-dark" id="darkButton">
+        <img onclick="escuro()" id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    </div>
+    <div id="principal" class="container-md container-sm d-flex align-items-center">
+        <div id="principal-enter" class="col-md-9 container">
+            <center>
+                <img id="logo" src="icons/logo-black.png" alt="logo" onclick="meow()">
+            </center>
+            <div id="searchCamp">
+                <div id="interSearchCamp">
+                    <img onclick="redirect()" id="icon-search" src="icons/search-icon.png" alt="icone de pesquisa">
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise no MEOW ou digite uma URL">
+                    <img id="icon-microfone" src="icons/microphone-icon.png" alt="icone de microfone">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" class="card card-footer position-absolute bottom-0">
+        <p style="margin-top: 3px;">This website has made for me <a href="https://github.com/GanestGamer11">@glaucyrlei</a></p>
+    </footer>
+
+</body>
+
+<script src="darkButton.js"></script>
+</html>
