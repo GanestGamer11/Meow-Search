@@ -17,6 +17,7 @@
                 return;
             }else{
                 localStorage.setItem("escuro", false);
+                return;
             }
         }
 
@@ -48,29 +49,30 @@
             if(escuro == "true"){
                 localStorage.setItem("escuro", false);
                 element.classList.toggle("dark-body");
-                footer.style.background = "gray";
-                searchCamp.style.background = "gray";
-                img.src = "icons/logo-black.png";
+                footer.style.background = "#FA8787";
+                searchCamp.style.background = "#FA8787";
+                img.src = "icons/logo.png";
             }
             
             if(escuro == "false"){
                 localStorage.setItem("escuro", true);
                 element.classList.toggle("dark-body");
-                footer.style.background = "#FA8787";
-                searchCamp.style.background = "#FA8787";
-                img.src = "icons/logo.png";
+                footer.style.background = "gray";
+                searchCamp.style.background = "gray";
+                img.src = "icons/logo-black.png";
+                
             }
         }
     </script>
 </head>
 <body>
-    <div class="theme-container shadow-dark" id="darkButton">
-        <img onclick="escuro()" id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    <div class="theme-container shadow-light" id="darkButton">
+        <img onclick="escuro()" id="theme-icon" src="https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg" alt="ERR">
     </div>
     <div id="principal" class="container-md container-sm d-flex align-items-center">
         <div id="principal-enter" class="col-md-9 container">
             <center>
-                <img id="logo" src="icons/logo-black.png" alt="logo" onclick="meow()">
+                <img id="logo" src="icons/logo.png" alt="logo" onclick="meow()">
             </center>
             <div id="searchCamp">
                 <div id="interSearchCamp">
